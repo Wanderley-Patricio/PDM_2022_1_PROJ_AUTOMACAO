@@ -1,3 +1,6 @@
+//HOME O LABORATÓRIO EQUIPE PROJETOS PUBLICAÇÕES CURSOS PARCEIROS TUTORIAIS BLOG
+//Tutorial Android – Comunicação Bluetooth
+
 package br.edu.ifpe.tads.pdm.pdm_2022_1_automacao_esp32_esp8266;
 
 import android.bluetooth.BluetoothAdapter;
@@ -12,14 +15,14 @@ import java.io.InputStreamReader;
 import java.util.UUID;
 
 public class ConexaoBluetooth {
-    private static ConexaoBluetooth conexao;
-    private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter();
-    private BluetoothDevice BTDevice;
-    private final BluetoothSocket BTSocket;
-    private BufferedReader mBufferedReader = null;
+    private static ConexaoBluetooth conexao; //objeto que referencia a classe
+    private final BluetoothAdapter BTAdapter = BluetoothAdapter.getDefaultAdapter(); //acessa o dispositivo bluetooth de um celular genérico
+    private BluetoothDevice BTDevice; //todo acesso ao módulo bluetooth utilizado no tutorial será feito a partir deste objeto.
+    private final BluetoothSocket BTSocket; // garante a instância da rede bluetooth entre o celular e o módulo
+    private BufferedReader mBufferedReader = null; //lê as comunicações
     private final UUID activeUUID= UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); //ID padrão da porta serial.
-    private boolean isConnected = true;
-    private final int REQUEST_ENABLE_BT = 1;
+    private boolean isConnected = true; // variável de controle da conexão
+    private final int REQUEST_ENABLE_BT = 1; // Constante padrão para requisição de permissão de acesso ao bluetooth em tempo de execução.
 
     public BufferedReader getmBufferedReader() {
         return mBufferedReader;

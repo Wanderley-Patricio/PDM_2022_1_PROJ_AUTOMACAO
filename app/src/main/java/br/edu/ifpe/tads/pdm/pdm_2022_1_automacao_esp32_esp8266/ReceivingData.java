@@ -34,7 +34,7 @@ public class ReceivingData extends AppCompatActivity {
             mmOutputStream.write("AT".getBytes());
 
             beginListenForData();
-            mmOutputStream.write("OK".getBytes());
+            mmOutputStream.write("48".getBytes());
 
             Toast.makeText(ReceivingData.this, "Recebendo dados do Bluetooth", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
@@ -56,7 +56,7 @@ public class ReceivingData extends AppCompatActivity {
                         String info = reader.readLine(); // recebe os dados da comunicação
                         Toast.makeText(ReceivingData.this, "Mensagem recebida: " + info, Toast.LENGTH_SHORT).show();
 
-                        mmOutputStream.write("OK".getBytes()); // envia dados.
+                        mmOutputStream.write("48".getBytes()); // envia dados.
 
                     } catch (IOException ex) {
                         stopWorker = true;
